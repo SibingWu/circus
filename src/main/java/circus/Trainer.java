@@ -1,3 +1,10 @@
+package circus;
+
+import circus.animal.Animal;
+import circus.animal.Bird;
+import circus.animal.Duck;
+import circus.animal.Parrot;
+
 public class Trainer {
     public static void main(String[] args) {
         Duck d = new Duck();
@@ -8,12 +15,12 @@ public class Trainer {
         Duck d2 = (Duck) a; // downcasting
         train(new Duck());
         // train(new Parrot());
-        Animal a2 = new Animal();
-        Bird b2 = new Bird();
     }
 
     private static void train(Bird bird) {
-        Duck d = (Duck) bird;
-        d.swim();
+        if (bird instanceof Duck) {
+            Duck d = (Duck) bird;
+            d.swim();
+        }
     }
 }
